@@ -9,10 +9,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Configuration
@@ -28,8 +30,13 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf()
                 .disable()
-                .authorizeHttpRequests()
-                .requestMatchers("/login")
+                .authorizeRequests()
+                .requestMatchers(new RequestMatcher() {
+                    @Override
+                    public boolean matches(HttpServletRequest httpServletRequest) {
+                        return httpServletRequest.getContextPath().equals("/login");
+                    }
+                })
                 .permitAll()
                 .anyRequest()
                 .authenticated()

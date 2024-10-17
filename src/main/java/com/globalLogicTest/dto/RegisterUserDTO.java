@@ -2,10 +2,12 @@ package com.globalLogicTest.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class RegisterUserDTO {
 
@@ -18,6 +20,7 @@ public class RegisterUserDTO {
     private List<RegisterPhoneDTO> phones;
 
     @Data
+    @NoArgsConstructor
     @AllArgsConstructor
     public static class RegisterPhoneDTO {
 

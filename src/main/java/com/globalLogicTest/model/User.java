@@ -1,18 +1,21 @@
 package com.globalLogicTest.model;
 
-import jakarta.persistence.*;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -23,7 +26,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User implements UserDetails {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     public Long id;
     
     @Column

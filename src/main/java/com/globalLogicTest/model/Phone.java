@@ -1,10 +1,11 @@
 package com.globalLogicTest.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "phones")
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Phone {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     public Long id;
 
     @Column

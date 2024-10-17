@@ -12,12 +12,12 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UsersDAO userRepository;
+    private UsersDAO usersDAO;
 
     public List<User> allUsers() {
         List<User> users = new ArrayList<>();
 
-        userRepository.findAll().forEach(users::add);
+        usersDAO.findAll().forEach(users::add);
 
         return users;
     }
