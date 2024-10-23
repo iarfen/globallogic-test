@@ -12,3 +12,17 @@ Los endpoints disponibles en la web API son los siguientes:
 
 - **/sign-up:** Registra un nuevo usuario.
 - **/login:** Inicia sesión con el token JWT de un usuario ya registrado.
+
+## Esquemas
+
+### Esquema de componentes
+
+Esquema de componentes:
+
+![Esquema de componentes](Components diagram.png)
+
+### Esquema de secuencia
+
+Esquema de secuencia:
+
+![Alt text](Sequence diagram.png)
