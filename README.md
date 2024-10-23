@@ -19,10 +19,10 @@ Los endpoints disponibles en la web API son los siguientes:
 
 Esquema de componentes:
 
-![Esquema de componentes](Components diagram.png)
+![Alt text](./Components diagram.png)
 
 ### Esquema de secuencia
 
 Esquema de secuencia:
 
-![Alt text](Sequence diagram.png)
+![Alt text](./Sequence diagram.png)
